@@ -1,0 +1,7 @@
+@if (movie()) {
+  <a routerLink="/">Back to results</a>
+  <h2>{{ movie().Title }} ({{ movie().Year }})</h2>
+  <p>{{ movie().Genre }}</p>
+  <p>{{ movie().Plot }}</p>
+  <img [src]="movie().Poster" [alt]="movie().Title">
+}

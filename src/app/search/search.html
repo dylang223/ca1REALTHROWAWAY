@@ -1,0 +1,12 @@
+<h2>Enter Your Favorite Movie</h2>
+<form  (ngSubmit)="searchMovie()">
+  <div class="mb-3 ">
+    <label for="movieTitle" class="form-label">Movie Title</label>
+    <input type="text" class="form-control" id="movieTitle" placeholder="Enter movie title" [(ngModel)]="movieTitle" name="movieTitle">
+  </div>
+  <button class="btn btn-primary" type="submit" >Submit</button>
+</form>
+
+
+
+

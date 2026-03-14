@@ -1,0 +1,17 @@
+<div class="results-container">
+  @for (movieData of movieapiService.movies(); track movieData.imdbID) {
+    <div class="movie-card">
+      {{ movieData.Title }}
+      {{ movieData.Year }}
+      {{ movieData.Type }}
+      <a [routerLink]="['/movie', movieData.imdbID]">View details</a>
+    </div>
+  }
+  @if (movieapiService.movies().length > 0) {
+    <div>
+      <button (click)="movieapiService.previousPage()" [disabled]="movieapiService.currentPage() <= 1">Previous</button>
+      <span> Page {{ movieapiService.currentPage() }} of {{ movieapiService.maxPages() }} </span>
+      <button (click)="movieapiService.nextPage()" [disabled]="movieapiService.currentPage() >= movieapiService.maxPages()">Next</button>
+    </div>
+  }
+</div>
